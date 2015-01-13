@@ -1,4 +1,5 @@
 Raddit::Application.routes.draw do
+  devise_for :users
   resources :links
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -55,4 +56,6 @@ Raddit::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  root "links#index"
 end
