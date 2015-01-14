@@ -49,3 +49,5 @@ end
 # gem 'debugger', group: [:development, :test]
 
 gem 'bootstrap-sass', '~> 3.2.0.2'
+
+gem 'acts_as_votable', '~> 0.10.0'
