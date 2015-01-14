@@ -1,4 +1,6 @@
 Raddit::Application.routes.draw do
+  resources :comments
+
   devise_for :users
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -56,12 +58,14 @@ Raddit::Application.routes.draw do
   #     resources :products
   #   end
 
-  root "links#index"
-
   resources :links do
     member do
       put "like", to: "links#upvote"
       put "dislike", to: "links#downvote"
     end
+    resources :comments
   end
+
+  root "links#index"
+  
 end
